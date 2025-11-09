@@ -1,0 +1,50 @@
+:root {
+  --bg: #0b1220;
+  --panel: #111a2c;
+  --text: #eef2ff;
+  --muted: #aab3c5;
+  --primary: #6ea8fe;
+  --accent: #61dafb;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: radial-gradient(1000px 600px at 10% 10%, #152341, var(--bg)); color: var(--text); }
+
+.container { max-width: 900px; margin: 0 auto; padding: 32px 20px 60px; }
+
+h1 { font-size: 28px; margin: 0 0 20px; }
+.search { display: flex; gap: 12px; margin-bottom: 16px; }
+.search input { flex: 1; padding: 12px 14px; border-radius: 10px; border: 1px solid #223153; background: #0e172b; color: var(--text); outline: none; }
+.search input::placeholder { color: #6b7a99; }
+.search button { padding: 12px 16px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), var(--accent)); border: none; color: #0b1220; font-weight: 700; cursor: pointer; }
+.search button[disabled] { opacity: 0.7; cursor: wait; }
+
+.error { color: #ffb4b4; margin: 12px 0; }
+
+.results header { margin: 12px 0 16px; }
+.results h2 { margin: 0; font-size: 22px; }
+.meta { color: var(--muted); margin-top: 4px; }
+
+.current { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin: 16px 0 24px; }
+.current-item { background: var(--panel); border: 1px solid #1a2540; border-radius: 12px; padding: 14px; }
+.current .label { color: var(--muted); font-size: 12px; }
+.current .value { font-size: 28px; font-weight: 700; }
+.current .temp { font-size: 36px; }
+.current .desc { color: var(--muted); margin-top: 6px; }
+
+.days { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 12px; }
+.day { background: var(--panel); border: 1px solid #1a2540; border-radius: 12px; padding: 12px; }
+.day-date { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+.day-desc { font-size: 14px; min-height: 18px; }
+.day-temps { display: flex; gap: 8px; margin-top: 6px; }
+.day-temps .tmax { font-weight: 700; }
+.day-temps .tmin { color: var(--muted); }
+.day-pop { margin-top: 6px; color: var(--muted); font-size: 12px; }
+
+.footer { margin-top: 40px; color: var(--muted); font-size: 12px; text-align: center; }
+
+@media (max-width: 720px) {
+  .days { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .current { grid-template-columns: 1fr; }
+}
